@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coffeemetry Courses - Professional barista training programs and coffee education">
+    <meta name="keywords" content="barista training courses, coffee education, barista certification, coffee classes">
+    <meta name="author" content="Coffeemetry">
+    <title>Courses - Coffeemetry</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-black: #000000;
+            --primary-brown: #582308;
+            --primary-golden: #cf9652;
+            --primary-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-black);
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: right;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--primary-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--primary-black) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-brown) !important;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-golden);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--primary-golden);
+            color: var(--primary-white);
+        }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            background-color: var(--primary-brown);
+            color: var(--primary-white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-switcher:hover {
+            background-color: var(--primary-golden);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--primary-white);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-brown);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-golden);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+        
+        /* Course Cards */
+        .course-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .course-content {
+            padding: 25px;
+        }
+        
+        .course-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-brown);
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-golden);
+            color: var(--primary-white);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--primary-brown);
+            color: var(--primary-white);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-golden);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-golden);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--primary-white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-golden);
+            color: var(--primary-black);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* RTL Adjustments */
+        [dir="rtl"] .navbar-nav .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+        
+        [dir="rtl"] .section-title::after {
+            left: auto;
+            right: 0;
+        }
+        
+        [dir="rtl"] .social-links {
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/150x40/582308/ffffff?text=Coffeemetry" alt="Coffeemetry Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-en="Services" data-ar="خدماتنا">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services.html" data-en="All Services" data-ar="جميع الخدمات">All Services</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Consulting" data-ar="الاستشارات">Consulting</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Training" data-ar="التدريب">Training</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Equipment" data-ar="المعدات">Equipment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="lang-switcher" id="langSwitcher">AR</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 data-en="Barista Training Courses" data-ar="دورات تدريب الباريستا">Barista Training Courses</h1>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" data-en="Professional Training Programs" data-ar="برامج التدريب الاحترافية">Professional Training Programs</h2>
+                <p class="section-subtitle" data-en="Elevate your coffee skills with our comprehensive barista training courses designed for all skill levels" data-ar="ارفع مستوى مهاراتك في القهوة مع دوراتنا الشاملة لتدريب الباريستا المصممة لجميع المستويات المهارية">Elevate your coffee skills with our comprehensive barista training courses designed for all skill levels</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Beginner Barista Course" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Beginner Barista Course" data-ar="دورة الباريستا للمبتدئين">Beginner Barista Course</h3>
+                            <p data-en="Perfect for coffee enthusiasts and those new to professional coffee preparation. Learn the fundamentals of espresso extraction, milk steaming, and basic latte art." data-ar="مثالي لعشاق القهوة وأولئك الجدد في تحضير القهوة الاحترافية. تعلم أساسيات استخلاص الإسبريسو وتسخين الحليب والفن الأساسي لللاتيه.">Perfect for coffee enthusiasts and those new to professional coffee preparation. Learn the fundamentals of espresso extraction, milk steaming, and basic latte art.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 20 hours</span>
+                                <span><i class="far fa-calendar"></i> 5 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Intermediate Barista Course" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Intermediate Barista Course" data-ar="دورة الباريستا المتوسطة">Intermediate Barista Course</h3>
+                            <p data-en="Build on your foundational skills with advanced techniques in espresso extraction, milk texturing, and latte art. Perfect for working baristas looking to enhance their skills." data-ar="ابنِ على مهاراتك الأساسية بتقنيات متقدمة في استخلاص الإسبريسو وتنعيم الحليب وفن اللاتيه. مثالي للباريستا العاملين الذين يتطلعون إلى تعزيز مهاراتهم.">Build on your foundational skills with advanced techniques in espresso extraction, milk texturing, and latte art. Perfect for working baristas looking to enhance their skills.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 30 hours</span>
+                                <span><i class="far fa-calendar"></i> 7 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1589386417966-3ae15c9b1f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Advanced Barista Course" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Advanced Barista Course" data-ar="دورة الباريستا المتقدمة">Advanced Barista Course</h3>
+                            <p data-en="Master the art of coffee with our comprehensive advanced course covering alternative brewing methods, complex latte art, and coffee business management." data-ar="أتقن فن القهوة مع دورتنا المتقدمة الشاملة التي تغطي طرق التحضير البديلة وفن اللاتيه المعقد وإدارة أعمال القهوة.">Master the art of coffee with our comprehensive advanced course covering alternative brewing methods, complex latte art, and coffee business management.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 40 hours</span>
+                                <span><i class="far fa-calendar"></i> 10 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Coffee Business Management" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Coffee Business Management" data-ar="إدارة أعمال القهوة">Coffee Business Management</h3>
+                            <p data-en="Learn the business side of coffee with our specialized course covering inventory management, staff training, marketing strategies, and financial planning for coffee shops." data-ar="تعلم الجانب التجاري من القهوة مع دورتنا المتخصصة التي تغطي إدارة المخزون وتدريب الموظفين واستراتيجيات التسويق والتخطيط المالي للمقاهي.">Learn the business side of coffee with our specialized course covering inventory management, staff training, marketing strategies, and financial planning for coffee shops.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 35 hours</span>
+                                <span><i class="far fa-calendar"></i> 8 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Coffee Roasting Workshop" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Coffee Roasting Workshop" data-ar="ورشة تحميص القهوة">Coffee Roasting Workshop</h3>
+                            <p data-en="Dive into the art and science of coffee roasting with our hands-on workshop. Learn about green coffee selection, roast profiles, and quality control." data-ar="انغمس في فن وعلم تحميص القهوة مع ورشتنا العملية. تعلم حول اختيار القهوة الخضراء وملفات التحميص ومراقبة الجودة.">Dive into the art and science of coffee roasting with our hands-on workshop. Learn about green coffee selection, roast profiles, and quality control.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 25 hours</span>
+                                <span><i class="far fa-calendar"></i> 5 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="course-card">
+                        <img src="https://images.unsplash.com/photo-1589386417966-3ae15c9b1f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Sensory Evaluation Course" class="course-img">
+                        <div class="course-content">
+                            <h3 data-en="Sensory Evaluation Course" data-ar="دورة التقييم الحسي">Sensory Evaluation Course</h3>
+                            <p data-en="Develop your palate and learn to identify flavor profiles, defects, and quality characteristics in coffee. Essential for coffee professionals and enthusiasts." data-ar="طوّر حاسة ذوقك وتعلم تحديد ملفات النكهة والعيوب وخصائص الجودة في القهوة. أساسي لمحترفي القهوة وعشاقها.">Develop your palate and learn to identify flavor profiles, defects, and quality characteristics in coffee. Essential for coffee professionals and enthusiasts.</p>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 20 hours</span>
+                                <span><i class="far fa-calendar"></i> 4 days</span>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Enroll Now" data-ar="سجل الآن">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Coffeemetry</div>
+                    <p data-en="Professional coffee consulting and barista training services for coffee houses and cafes." data-ar="خدمات استشارية وتدريب احترافية للمقاهي ومحلات القهوة.">Professional coffee consulting and barista training services for coffee houses and cafes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="services.html" data-en="Services" data-ar="خدماتنا">Services</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a></li>
+                        <li><a href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Amman, Jordan</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@coffeemetry.net</p>
+                    <p><i class="fas fa-phone me-2"></i> +962786674465</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-en="&copy; 2023 Coffeemetry. All Rights Reserved." data-ar="&copy; 2023 كوفيومتري. جميع الحقوق محفوظة.">&copy; 2023 Coffeemetry. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Language Switcher
+        document.getElementById('langSwitcher').addEventListener('click', function() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            
+            if (currentLang === 'en') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                this.textContent = 'EN';
+                
+                // Update all elements with data-en and data-ar attributes
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    element.textContent = element.getAttribute('data-ar');
+                });
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                this.textContent = 'AR';
+                
+                // Update all elements with data-en and data-ar attributes
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    element.textContent = element.getAttribute('data-en');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

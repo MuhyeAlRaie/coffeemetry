@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coffeemetry Service Details - Learn more about our coffee consulting and training services">
+    <meta name="keywords" content="coffee consulting details, barista training information, coffee business solutions">
+    <meta name="author" content="Coffeemetry">
+    <title>Service Details - Coffeemetry</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-black: #000000;
+            --primary-brown: #582308;
+            --primary-golden: #cf9652;
+            --primary-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-black);
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: right;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--primary-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--primary-black) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-brown) !important;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-golden);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--primary-golden);
+            color: var(--primary-white);
+        }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            background-color: var(--primary-brown);
+            color: var(--primary-white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-switcher:hover {
+            background-color: var(--primary-golden);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--primary-white);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-brown);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-golden);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+        
+        /* Service Details */
+        .service-detail-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .service-feature i {
+            font-size: 1.5rem;
+            color: var(--primary-golden);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .service-feature-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-brown);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-golden);
+            color: var(--primary-white);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--primary-brown);
+            color: var(--primary-white);
+        }
+        
+        /* Related Services */
+        .related-service-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .related-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .related-service-img {
+            height: 150px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .related-service-content {
+            padding: 20px;
+        }
+        
+        .related-service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-brown);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-golden);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-golden);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--primary-white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-golden);
+            color: var(--primary-black);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* RTL Adjustments */
+        [dir="rtl"] .navbar-nav .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+        
+        [dir="rtl"] .section-title::after {
+            left: auto;
+            right: 0;
+        }
+        
+        [dir="rtl"] .service-feature i {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        
+        [dir="rtl"] .social-links {
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/150x40/582308/ffffff?text=Coffeemetry" alt="Coffeemetry Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-en="Services" data-ar="خدماتنا">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services.html" data-en="All Services" data-ar="جميع الخدمات">All Services</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Consulting" data-ar="الاستشارات">Consulting</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Training" data-ar="التدريب">Training</a></li>
+                            <li><a class="dropdown-item" href="service-details.html" data-en="Equipment" data-ar="المعدات">Equipment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="lang-switcher" id="langSwitcher">AR</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 data-en="Business Consulting" data-ar="الاستشارات التجارية">Business Consulting</h1>
+        </div>
+    </div>
+
+    <!-- Service Details Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Business Consulting" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title" data-en="Business Consulting" data-ar="الاستشارات التجارية">Business Consulting</h2>
+                    <p data-en="Our business consulting services are designed to help coffee shop owners and entrepreneurs navigate the complexities of the coffee industry. We provide comprehensive analysis and strategic recommendations tailored to your specific business goals." data-ar="تم تصميم خدماتنا الاستشارية التجارية لمساعدة أصحاب المقاهي ورواد الأعمال في التنقل في تعقيدات صناعة القهوة. نقدم تحليلاً شاملاً وتوصيات استراتيجية مصممة خصيصًا لتناسب أهداف عملك المحددة.">Our business consulting services are designed to help coffee shop owners and entrepreneurs navigate the complexities of the coffee industry. We provide comprehensive analysis and strategic recommendations tailored to your specific business goals.</p>
+                    
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="service-feature-content">
+                            <h4 data-en="Market Analysis" data-ar="تحليل السوق">Market Analysis</h4>
+                            <p data-en="Comprehensive assessment of local market conditions, competition, and customer preferences to inform your business strategy." data-ar="تقييم شامل لظروف السوق المحلية والمنافسة وتفضيلات العملاء لإعلام استراتيجية عملك.">Comprehensive assessment of local market conditions, competition, and customer preferences to inform your business strategy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="service-feature-content">
+                            <h4 data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</h4>
+                            <p data-en="Detailed financial projections, budget optimization, and revenue enhancement strategies to maximize profitability." data-ar="توقعات مالية مفصلة وتحسين الميزانية واستراتيجيات تعزيز الإيرادات لتحقيق أقصى قدر من الربحية.">Detailed financial projections, budget optimization, and revenue enhancement strategies to maximize profitability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="service-feature-content">
+                            <h4 data-en="Operational Efficiency" data-ar="الكفاءة التشغيلية">Operational Efficiency</h4>
+                            <p data-en="Streamlining workflows, optimizing staff schedules, and implementing systems to improve productivity and reduce costs." data-ar="تبسيط سير العمل وتحسين جداول الموظفين وتنفيذ الأنظمة لتحسين الإنتاجية وتقليل التكاليف.">Streamlining workflows, optimizing staff schedules, and implementing systems to improve productivity and reduce costs.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="btn btn-primary-custom mt-3" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" data-en="Our Process" data-ar="عمليتنا">Our Process</h2>
+                <p class="section-subtitle" data-en="How we work with you to transform your coffee business" data-ar="كيف نعمل معك لتحويل عملك في مجال القهوة">How we work with you to transform your coffee business</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 data-en="Discovery" data-ar="الاكتشاف">Discovery</h3>
+                        <p data-en="We begin by understanding your business goals, challenges, and unique situation through in-depth consultations and analysis." data-ar="نبدأ بفهم أهداف عملك وتحدياتك وموقفك الفريد من خلال استشارات وتحليل معمق.">We begin by understanding your business goals, challenges, and unique situation through in-depth consultations and analysis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 data-en="Strategy" data-ar="الاستراتيجية">Strategy</h3>
+                        <p data-en="Based on our findings, we develop a customized strategy with actionable recommendations tailored to your specific needs." data-ar="بناءً على نتائجنا، نقوم بتطوير استراتيجية مخصصة مع توصيات قابلة للتنفيذ مصممة خصيصًا لتناسب احتياجاتك.">Based on our findings, we develop a customized strategy with actionable recommendations tailored to your specific needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 data-en="Implementation" data-ar="التنفيذ">Implementation</h3>
+                        <p data-en="We work alongside your team to implement the recommended changes, providing guidance and support throughout the process." data-ar="نعمل مع فريقك لتنفيذ التغييرات الموصى بها، وتقديم الإرشاد والدعم طوال العملية.">We work alongside your team to implement the recommended changes, providing guidance and support throughout the process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-en="Evaluation" data-ar="التقييم">Evaluation</h3>
+                        <p data-en="We continuously monitor progress and measure results, making adjustments as needed to ensure optimal outcomes." data-ar="نراقب التقدم باستمرار ونقيس النتائج، مع إجراء تعديلات حسب الحاجة لضمان تحقيق النتائج المثلى.">We continuously monitor progress and measure results, making adjustments as needed to ensure optimal outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" data-en="Related Services" data-ar="خدمات ذات صلة">Related Services</h2>
+                <p class="section-subtitle" data-en="Explore our other services that complement business consulting" data-ar="استكشف خدماتنا الأخرى التي تكمل الاستشارات التجارية">Explore our other services that complement business consulting</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="related-service-card">
+                        <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Barista Training" class="related-service-img">
+                        <div class="related-service-content">
+                            <h3 data-en="Barista Training" data-ar="تدريب الباريستا">Barista Training</h3>
+                            <p data-en="Professional certification programs and hands-on training for coffee professionals." data-ar="برامج اعتماد احترافية وتدريب عملي لمحترفي القهوة.">Professional certification programs and hands-on training for coffee professionals.</p>
+                            <a href="service-details.html" data-en="Learn More" data-ar="تعلم المزيد">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="related-service-card">
+                        <img src="https://images.unsplash.com/photo-1589386417966-3ae15c9b1f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Equipment Selection" class="related-service-img">
+                        <div class="related-service-content">
+                            <h3 data-en="Equipment Selection" data-ar="اختيار المعدات">Equipment Selection</h3>
+                            <p data-en="Expert guidance on selecting the right coffee equipment for your business." data-ar="إرشادات الخبراء في اختيار معدات القهوة المناسبة لعملك.">Expert guidance on selecting the right coffee equipment for your business.</p>
+                            <a href="service-details.html" data-en="Learn More" data-ar="تعلم المزيد">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="related-service-card">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Marketing & Branding" class="related-service-img">
+                        <div class="related-service-content">
+                            <h3 data-en="Marketing & Branding" data-ar="التسويق والعلامة التجارية">Marketing & Branding</h3>
+                            <p data-en="Comprehensive strategies to help your coffee business stand out in the market." data-ar="استراتيجيات شاملة لمساعدة عملك في مجال القهوة على التميز في السوق.">Comprehensive strategies to help your coffee business stand out in the market.</p>
+                            <a href="service-details.html" data-en="Learn More" data-ar="تعلم المزيد">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Coffeemetry</div>
+                    <p data-en="Professional coffee consulting and barista training services for coffee houses and cafes." data-ar="خدمات استشارية وتدريب احترافية للمقاهي ومحلات القهوة.">Professional coffee consulting and barista training services for coffee houses and cafes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                        <li><a href="services.html" data-en="Services" data-ar="خدماتنا">Services</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a></li>
+                        <li><a href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Amman, Jordan</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@coffeemetry.net</p>
+                    <p><i class="fas fa-phone me-2"></i> +962786674465</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-en="&copy; 2023 Coffeemetry. All Rights Reserved." data-ar="&copy; 2023 كوفيومتري. جميع الحقوق محفوظة.">&copy; 2023 Coffeemetry. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Language Switcher
+        document.getElementById('langSwitcher').addEventListener('click', function() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            
+            if (currentLang === 'en') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                this.textContent = 'EN';
+                
+                // Update all elements with data-en and data-ar attributes
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    element.textContent = element.getAttribute('data-ar');
+                });
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                this.textContent = 'AR';
+                
+                // Update all elements with data-en and data-ar attributes
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    element.textContent = element.getAttribute('data-en');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
