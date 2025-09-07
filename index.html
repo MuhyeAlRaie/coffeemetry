@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coffeemetry - Professional coffee consulting and barista training services for coffee houses">
-    <meta name="keywords" content="coffee consulting, barista training, coffee business, coffee education">
+    <title>Coffeemetry | Coffee Consulting & Training Services in Amman, Jordan</title>
+    <meta name="description" content="Coffeemetry offers professional coffee consulting, barista training, and business solutions for coffeehouses in Amman, Jordan. Elevate your coffee business with our expert services.">
+    <meta name="keywords" content="coffee consulting, barista training, coffeehouse business, coffee services, Amman Jordan, Coffeemetry">
     <meta name="author" content="Coffeemetry">
-    <title>Coffeemetry - Coffee Consulting & Barista Training</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.coffeemetry.net/">
+    <meta property="og:title" content="Coffeemetry | Coffee Consulting & Training Services">
+    <meta property="og:description" content="Professional coffee consulting and barista training services in Amman, Jordan. Elevate your coffee business with our expert solutions.">
+    <meta property="og:image" content="https://www.coffeemetry.net/images/cofffeemetry-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.coffeemetry.net/">
+    <meta property="twitter:title" content="Coffeemetry | Coffee Consulting & Training Services">
+    <meta property="twitter:description" content="Professional coffee consulting and barista training services in Amman, Jordan.">
+    <meta property="twitter:image" content="https://www.coffeemetry.net/images/cofffeemetry-og.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,488 +37,54 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-black: #000000;
-            --primary-brown: #582308;
-            --primary-golden: #cf9652;
-            --primary-white: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-black);
-            background-color: var(--primary-white);
-            overflow-x: hidden;
-        }
-        
-        /* RTL Support */
-        [dir="rtl"] body {
-            font-family: 'Montserrat', sans-serif;
-            text-align: right;
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            background-color: var(--primary-white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link {
-            color: var(--primary-black) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .navbar-nav .nav-link:hover {
-            color: var(--primary-brown) !important;
-        }
-        
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-golden);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dropdown-item:hover {
-            background-color: var(--primary-golden);
-            color: var(--primary-white);
-        }
-        
-        /* Language Switcher */
-        .lang-switcher {
-            background-color: var(--primary-brown);
-            color: var(--primary-white);
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-switcher:hover {
-            background-color: var(--primary-golden);
-        }
-        
-        /* Hero Slider */
-        .hero-slider {
-            height: 100vh;
-            position: relative;
-        }
-        
-        .carousel-item {
-            height: 100vh;
-            position: relative;
-        }
-        
-        .carousel-item img {
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 100%;
-            padding: 0 20px;
-        }
-        
-        .carousel-caption h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        
-        .carousel-caption p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        }
-        
-        .carousel-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
-        }
-        
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            padding: 20px;
-        }
-        
-        .carousel-indicators [data-bs-target] {
-            background-color: var(--primary-golden);
-        }
-        
-        /* RTL adjustments for carousel */
-        [dir="rtl"] .carousel-control-prev {
-            left: auto;
-            right: 0;
-        }
-        
-        [dir="rtl"] .carousel-control-next {
-            right: auto;
-            left: 0;
-        }
-        
-        [dir="rtl"] .carousel-control-prev-icon {
-            transform: rotate(180deg);
-        }
-        
-        [dir="rtl"] .carousel-control-next-icon {
-            transform: rotate(180deg);
-        }
-        
-        [dir="rtl"] .carousel-indicators {
-            flex-direction: row-reverse;
-        }
-        
-        .btn-primary-custom {
-            background-color: var(--primary-golden);
-            color: var(--primary-white);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-primary-custom:hover {
-            background-color: var(--primary-brown);
-            color: var(--primary-white);
-        }
-        
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--primary-brown);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-golden);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 50px;
-            max-width: 700px;
-        }
-        
-        /* About Section */
-        .about-content {
-            margin-top: 30px;
-        }
-        
-        .about-image {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .about-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Service Cards */
-        .service-card {
-            background-color: var(--primary-white);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            height: 100%;
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-golden);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-golden);
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-brown);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(rgba(88, 35, 8, 0.9), rgba(88, 35, 8, 0.9)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
-            padding: 100px 0;
-            text-align: center;
-            color: var(--primary-white);
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Contact Section */
-        .contact-form-container {
-            background-color: #f9f9f9;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        
-        .contact-info-box {
-            background-color: var(--primary-brown);
-            color: var(--primary-white);
-            padding: 40px;
-            border-radius: 8px;
-            height: 100%;
-        }
-        
-        .contact-info-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-golden);
-        }
-        
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info-item i {
-            font-size: 1.5rem;
-            color: var(--primary-golden);
-            margin-right: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-black);
-            color: var(--primary-white);
-            padding: 50px 0 20px;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-golden);
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-golden);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--primary-white);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary-golden);
-            color: var(--primary-black);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .carousel-caption h1 {
-                font-size: 2.8rem;
-            }
-            
-            .carousel-caption p {
-                font-size: 1.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .carousel-caption h1 {
-                font-size: 2.2rem;
-            }
-            
-            .carousel-caption p {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .carousel-caption h1 {
-                font-size: 1.8rem;
-            }
-            
-            .carousel-caption p {
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* RTL Adjustments */
-        [dir="rtl"] .navbar-nav .nav-link::after {
-            left: auto;
-            right: 0;
-        }
-        
-        [dir="rtl"] .section-title::after {
-            left: auto;
-            right: 0;
-        }
-        
-        [dir="rtl"] .contact-info-item i {
-            margin-right: 0;
-            margin-left: 15px;
-        }
-        
-        [dir="rtl"] .social-links {
-            justify-content: flex-end;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Coffeemetry",
+      "url": "https://www.coffeemetry.net",
+      "logo": "https://www.coffeemetry.net/images/logo.png",
+      "description": "Professional coffee consulting and barista training services in Amman, Jordan",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Amman",
+        "addressLocality": "Amman",
+        "addressCountry": "Jordan"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+962786674465",
+        "contactType": "customer service",
+        "email": "info@coffeemetry.net"
+      },
+      "sameAs": [
+        "https://www.facebook.com/coffeemetry",
+        "https://www.instagram.com/coffeemetry"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <!-- Floating Coffee Beans -->
+    <div class="floating-coffee-beans">
+        <div class="coffee-bean bean-1"><i class="fas fa-coffee"></i></div>
+        <div class="coffee-bean bean-2"><i class="fas fa-mug-hot"></i></div>
+        <div class="coffee-bean bean-3"><i class="fas fa-coffee"></i></div>
+        <div class="coffee-bean bean-4"><i class="fas fa-mug-hot"></i></div>
+        <div class="coffee-bean bean-5"><i class="fas fa-coffee"></i></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="https://via.placeholder.com/150x40/582308/ffffff?text=Coffeemetry" alt="Coffeemetry Logo">
+                <img src="images/logo.png" alt="Coffeemetry Logo" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -507,70 +92,77 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a class="nav-link active" href="index.html" data-translate="nav_home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                        <a class="nav-link" href="about.html" data-translate="nav_about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html" data-translate="nav_services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html" data-translate="nav_courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-translate="nav_contact">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-en="Services" data-ar="خدماتنا">
-                            Services
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="services.html" data-en="All Services" data-ar="جميع الخدمات">All Services</a></li>
-                            <li><a class="dropdown-item" href="service-details.html" data-en="Consulting" data-ar="الاستشارات">Consulting</a></li>
-                            <li><a class="dropdown-item" href="service-details.html" data-en="Training" data-ar="التدريب">Training</a></li>
-                            <li><a class="dropdown-item" href="service-details.html" data-en="Equipment" data-ar="المعدات">Equipment</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('ar')">العربية</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="lang-switcher" id="langSwitcher">AR</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide hero-slider" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" class="d-block w-100" alt="Coffee Business">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-caption">
-                        <h1 data-en="Elevate Your Coffee Business" data-ar="ارفع مستوى عملك في مجال القهوة">Elevate Your Coffee Business</h1>
-                        <p data-en="Professional consulting and barista training services for coffee houses and cafes" data-ar="خدمات استشارية وتدريب احترافية للمقاهي ومحلات القهوة">Professional consulting and barista training services for coffee houses and cafes</p>
-                        <a href="#services" class="btn btn-primary-custom" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-1.jpg'); background-size: cover; background-position: center;">
+                        <div class="hero-content">
+                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
+                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
+                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
+                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" class="d-block w-100" alt="Barista Training">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-caption">
-                        <h1 data-en="Expert Barista Training" data-ar="تدريب الباريستا الخبير">Expert Barista Training</h1>
-                        <p data-en="Comprehensive training programs for all skill levels, from beginners to professionals" data-ar="برامج تدريب شاملة لجميع المستويات المهارية، من المبتدئين إلى المحترفين">Comprehensive training programs for all skill levels, from beginners to professionals</p>
-                        <a href="courses.html" class="btn btn-primary-custom" data-en="View Courses" data-ar="عرض الدورات">View Courses</a>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-2.jpg'); background-size: cover; background-position: center;">
+                        <div class="hero-content">
+                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
+                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
+                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
+                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1589386417966-3ae15c9b1f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" class="d-block w-100" alt="Coffee Consulting">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-caption">
-                        <h1 data-en="Strategic Coffee Consulting" data-ar="الاستشارات الاستراتيجية للقهوة">Strategic Coffee Consulting</h1>
-                        <p data-en="Transform your coffee business with our expert guidance and innovative solutions" data-ar="حول عملك في مجال القهوة مع إرشاداتنا الخبيرة وحلولنا المبتكرة">Transform your coffee business with our expert guidance and innovative solutions</p>
-                        <a href="services.html" class="btn btn-primary-custom" data-en="Learn More" data-ar="تعلم المزيد">Learn More</a>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-3.jpg'); background-size: cover; background-position: center;">
+                        <div class="hero-content">
+                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
+                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
+                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
+                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -586,23 +178,75 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section class="about section-padding">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title" data-en="About Coffeemetry" data-ar="حول كوفيومتري">About Coffeemetry</h2>
-                <p class="section-subtitle" data-en="Leading the way in coffee consulting and barista training excellence" data-ar="نقود الطريق في مجال الاستشارات والتدريب الاحترافي للقهوة">Leading the way in coffee consulting and barista training excellence</p>
-            </div>
-            
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <div class="about-content">
-                        <p data-en="Founded in 2015, Coffeemetry has grown from a small team of coffee enthusiasts to a premier consulting and training company serving coffee businesses across the Middle East and beyond. Our journey began with a simple belief: that every coffee shop has the potential to become a destination for exceptional coffee experiences." data-ar="تأسست كوفيومتري في عام 2015، ونمت من فريق صغير من عشاق القهوة إلى شركة استشارية وتدريبية رائدة تخدم أعمال القهوة في جميع أنحاء الشرق الأوسط وما وراءها. بدأت رحلتنا بإيمان بسيط: أن كل مقهى لديه القدرة على أن يصبح وجهة لتجارب القهوة الاستثنائية.">Founded in 2015, Coffeemetry has grown from a small team of coffee enthusiasts to a premier consulting and training company serving coffee businesses across the Middle East and beyond. Our journey began with a simple belief: that every coffee shop has the potential to become a destination for exceptional coffee experiences.</p>
-                        <p data-en="Today, we are proud to have helped over 200 coffee businesses achieve their goals through our comprehensive consulting services, expert training programs, and innovative solutions. Our team of industry experts brings decades of combined experience in coffee production, business management, and education." data-ar="اليوم، نفخر بأننا ساعدنا أكثر من 200 عمل في مجال القهوة على تحقيق أهدافهم من خلال خدماتنا الاستشارية الشاملة وبرامجنا التدريبية الخبيرة وحلولنا المبتكرة. يجلب فريقنا من الخبراء في الصناعة عقوداً من الخبرة المشتركة في إنتاج القهوة وإدارة الأعمال والتعليم.">Today, we are proud to have helped over 200 coffee businesses achieve their goals through our comprehensive consulting services, expert training programs, and innovative solutions. Our team of industry experts brings decades of combined experience in coffee production, business management, and education.</p>
+                    <div class="about-img">
+                        <img src="images/about-img.jpg" alt="Coffeemetry Team" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="About Coffeemetry">
+                    <div class="about-content">
+                        <div class="section-title text-start">
+                            <h2 data-translate="about_title">About Coffeemetry</h2>
+                        </div>
+                        <p data-translate="about_text1">Coffeemetry is a newly established startup company founded in 2025 and headquartered in Amman, Jordan. The company specializes in providing consulting services, professional barista training, and tailored solutions to help coffeehouses achieve sustainable growth and operational excellence.</p>
+                        <p data-translate="about_text2">We aim to bridge the gap between passion for coffee and successful business practices, empowering coffee entrepreneurs and professionals with the knowledge and skills to thrive in a competitive market.</p>
+                        
+                        <div class="vision-mission mt-4">
+                            <div class="vm-item mb-4">
+                                <h4 data-translate="vision_title">Our Vision</h4>
+                                <p data-translate="vision_text">To become the leading coffee consulting and training hub in the Middle East, shaping the future of coffee culture and business growth.</p>
+                            </div>
+                            <div class="vm-item">
+                                <h4 data-translate="mission_title">Our Mission</h4>
+                                <p data-translate="mission_text">We are committed to elevating the standards of the coffee industry by offering innovative training, expert consulting, and customized strategies that empower coffeehouses and baristas to achieve excellence, sustainability, and long-term success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="values mt-5">
+                <div class="section-title">
+                    <h2 data-translate="values_title">Our Core Values</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-item">
+                            <i class="fas fa-trophy"></i>
+                            <h4 data-translate="value_excellence">Excellence</h4>
+                            <p data-translate="value_excellence_text">Delivering the highest quality consulting and training standards.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <h4 data-translate="value_passion">Passion</h4>
+                            <p data-translate="value_passion_text">Sharing a genuine love for coffee and coffeehouse culture.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4 data-translate="value_integrity">Integrity</h4>
+                            <p data-translate="value_integrity_text">Building trust through transparency and honest practices.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4 data-translate="value_innovation">Innovation</h4>
+                            <p data-translate="value_innovation_text">Introducing creative solutions and strategies for growth.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="value-item">
+                            <i class="fas fa-leaf"></i>
+                            <h4 data-translate="value_sustainability">Sustainability</h4>
+                            <p data-translate="value_sustainability_text">Encouraging environmentally and socially responsible practices.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -610,115 +254,201 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section bg-light">
+    <section class="services section-padding">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title" data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
-                <p class="section-subtitle" data-en="Comprehensive solutions to elevate your coffee business to new heights" data-ar="حلول شاملة لرفع مستوى عملك في مجال القهوة إلى آفاق جديدة">Comprehensive solutions to elevate your coffee business to new heights</p>
+            <div class="section-title">
+                <h2 data-translate="services_title">Our Services</h2>
             </div>
-            
             <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/service-1.jpg" alt="Coffee Consulting" class="img-fluid">
                         </div>
-                        <h3 data-en="Business Consulting" data-ar="الاستشارات التجارية">Business Consulting</h3>
-                        <p data-en="Strategic planning, financial analysis, and operational optimization tailored to your coffee business needs" data-ar="تخطيط استراتيجي وتحليل مالي وتحسين تشغيلي مصمم خصيصًا لاحتياجات عملك في مجال القهوة">Strategic planning, financial analysis, and operational optimization tailored to your coffee business needs</p>
+                        <div class="service-content">
+                            <h3 data-translate="service_consulting">Consulting for Coffeehouses</h3>
+                            <p data-translate="service_consulting_text">Business growth strategies, operational efficiency, and customer experience enhancement.</p>
+                            <a href="services-details.html#consulting" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-coffee"></i>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/service-2.jpg" alt="Barista Training" class="img-fluid">
                         </div>
-                        <h3 data-en="Barista Training" data-ar="تدريب الباريستا">Barista Training</h3>
-                        <p data-en="Professional barista certification programs and hands-on training for all skill levels" data-ar="برامج اعتماد الباريستا الاحترافية والتدريب العملي لجميع المستويات المهارية">Professional barista certification programs and hands-on training for all skill levels</p>
+                        <div class="service-content">
+                            <h3 data-translate="service_training">Barista Training Programs</h3>
+                            <p data-translate="service_training_text">Hands-on workshops and professional training tailored to all skill levels.</p>
+                            <a href="services-details.html#training" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/service-3.jpg" alt="Menu Development" class="img-fluid">
                         </div>
-                        <h3 data-en="Equipment Selection" data-ar="اختيار المعدات">Equipment Selection</h3>
-                        <p data-en="Expert guidance on selecting the right coffee equipment for your specific business requirements" data-ar="إرشادات الخبراء في اختيار معدات القهوة المناسبة لمتطلبات عملك المحددة">Expert guidance on selecting the right coffee equipment for your specific business requirements</p>
+                        <div class="service-content">
+                            <h3 data-translate="service_menu">Menu Development & Innovation</h3>
+                            <p data-translate="service_menu_text">Crafting unique coffee experiences through creative beverage design.</p>
+                            <a href="services-details.html#menu" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/service-4.jpg" alt="Quality Control" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h3 data-translate="service_quality">Quality Control & Standards</h3>
+                            <p data-translate="service_quality_text">Implementing systems to ensure consistency and excellence.</p>
+                            <a href="services-details.html#quality" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/service-5.jpg" alt="Market Research" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h3 data-translate="service_research">Market Research & Growth Planning</h3>
+                            <p data-translate="service_research_text">Guiding businesses with data-driven insights for expansion.</p>
+                            <a href="services-details.html#research" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="services.html" class="btn btn-primary" data-translate="view_all_services">View All Services</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Courses Section -->
+    <section class="courses section-padding">
         <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2 data-en="Ready to Transform Your Coffee Business?" data-ar="هل أنت مستعد لتحويل عملك في مجال القهوة؟">Ready to Transform Your Coffee Business?</h2>
-                <p data-en="Join hundreds of successful coffee shops that have elevated their business with Coffeemetry's expert consulting and training services." data-ar="انضم إلى مئات المقاهي الناجحة التي رفعت مستوى أعمالها مع خدمات الاستشارات والتدريب الخبيرة من كوفيومتري.">Join hundreds of successful coffee shops that have elevated their business with Coffeemetry's expert consulting and training services.</p>
-                <a href="contact.html" class="btn btn-primary-custom" data-en="Get Started Today" data-ar="ابدأ اليوم">Get Started Today</a>
+            <div class="section-title">
+                <h2 data-translate="courses_title">Our Courses</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="course-item">
+                        <div class="course-img">
+                            <img src="images/course-1.jpg" alt="Barista Fundamentals" class="img-fluid">
+                            <div class="course-badge">Beginner</div>
+                        </div>
+                        <div class="course-content">
+                            <h3>Barista Fundamentals</h3>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 20 Hours</span>
+                                <span><i class="far fa-calendar"></i> 5 Days</span>
+                            </div>
+                            <p>Master the basics of espresso preparation, milk steaming, and latte art.</p>
+                            <a href="courses.html#barista-fundamentals" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-item">
+                        <div class="course-img">
+                            <img src="images/course-2.jpg" alt="Advanced Brewing Techniques" class="img-fluid">
+                            <div class="course-badge">Advanced</div>
+                        </div>
+                        <div class="course-content">
+                            <h3>Advanced Brewing Techniques</h3>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 30 Hours</span>
+                                <span><i class="far fa-calendar"></i> 10 Days</span>
+                            </div>
+                            <p>Explore advanced extraction methods and flavor profiling for specialty coffee.</p>
+                            <a href="courses.html#advanced-brewing" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="course-item">
+                        <div class="course-img">
+                            <img src="images/course-3.jpg" alt="Coffee Business Management" class="img-fluid">
+                            <div class="course-badge">Professional</div>
+                        </div>
+                        <div class="course-content">
+                            <h3>Coffee Business Management</h3>
+                            <div class="course-meta">
+                                <span><i class="far fa-clock"></i> 40 Hours</span>
+                                <span><i class="far fa-calendar"></i> 2 Weeks</span>
+                            </div>
+                            <p>Learn to manage and grow a successful coffee business with proven strategies.</p>
+                            <a href="courses.html#business-management" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="courses.html" class="btn btn-primary" data-translate="view_all_courses">View All Courses</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section class="contact section-padding">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h2>
-                <p class="section-subtitle" data-en="Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible." data-ar="لديك أسئلة؟ نود أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            <div class="section-title">
+                <h2 data-translate="contact_title">Contact Us</h2>
             </div>
-            
             <div class="row">
-                <div class="col-lg-8" data-aos="fade-right">
-                    <div class="contact-form-container">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3 data-translate="contact_form_title">Get in Touch</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p data-translate="contact_location">Amman, Jordan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@coffeemetry.net">info@coffeemetry.net</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+962786674465">+962 7 8667 4465</a></p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3 data-translate="contact_form_title">Send Us a Message</h3>
                         <!-- Tally Form Embed -->
                         <iframe 
-                            data-tally-src="https://tally.so/embed/w2jxG1?hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                            data-tally-src="https://tally.so/embed/w2j1x1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
                             loading="lazy" 
                             width="100%" 
                             height="500" 
                             frameborder="0" 
                             marginheight="0" 
                             marginwidth="0" 
-                            title="Contact Form">
+                            title="Contact Coffeemetry">
                         </iframe>
                         <script>
-                            var d=document,w="https://tally.so/resources/embeds/tally-js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+                            var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tally_src}))};
+                            if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
                         </script>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-left">
-                    <div class="contact-info-box">
-                        <h3 data-en="Contact Information" data-ar="معلومات الاتصال">Contact Information</h3>
-                        <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4 data-en="Address" data-ar="العنوان">Address</h4>
-                                <p data-en="Amman, Jordan" data-ar="عمان، الأردن">Amman, Jordan</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
-                                <p data-en="+962786674465" data-ar="+962786674465">+962786674465</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
-                                <p data-en="info@coffeemetry.net" data-ar="info@coffeemetry.net">info@coffeemetry.net</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4 data-en="Working Hours" data-ar="ساعات العمل">Working Hours</h4>
-                                <p data-en="Monday - Friday: 9:00 AM - 6:00 PM" data-ar="الاثنين - الجمعة: 9:00 صباحًا - 6:00 مساءً">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                                <p data-en="Saturday: 10:00 AM - 4:00 PM" data-ar="السبت: 10:00 صباحًا - 4:00 مساءً">Saturday: 10:00 AM - 4:00 PM</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -726,38 +456,42 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="footer-logo">Coffeemetry</div>
-                    <p data-en="Professional coffee consulting and barista training services for coffee houses and cafes." data-ar="خدمات استشارية وتدريب احترافية للمقاهي ومحلات القهوة.">Professional coffee consulting and barista training services for coffee houses and cafes.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <div class="col-md-4">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Coffeemetry Logo" class="img-fluid mb-3">
+                        <p data-translate="footer_about">Coffeemetry is a leading coffee consulting and training hub in the Middle East, shaping the future of coffee culture and business growth.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <div class="col-md-4">
+                    <h5 data-translate="footer_links">Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                        <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
-                        <li><a href="services.html" data-en="Services" data-ar="خدماتنا">Services</a></li>
-                        <li><a href="courses.html" data-en="Courses" data-ar="الدورات">Courses</a></li>
-                        <li><a href="contact.html" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
+                        <li><a href="about.html" data-translate="nav_about">About</a></li>
+                        <li><a href="services.html" data-translate="nav_services">Services</a></li>
+                        <li><a href="courses.html" data-translate="nav_courses">Courses</a></li>
+                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Amman, Jordan</p>
-                    <p><i class="fas fa-envelope me-2"></i> info@coffeemetry.net</p>
-                    <p><i class="fas fa-phone me-2"></i> +962786674465</p>
+                <div class="col-md-4">
+                    <h5 data-translate="footer_contact">Contact Us</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_location">Amman, Jordan</span></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@coffeemetry.net">info@coffeemetry.net</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+962786674465">+962 7 8667 4465</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
-                <p data-en="&copy; 2023 Coffeemetry. All Rights Reserved." data-ar="&copy; 2023 كوفيومتري. جميع الحقوق محفوظة.">&copy; 2023 Coffeemetry. All Rights Reserved.</p>
+                <p>&copy; 2025 Coffeemetry. <span data-translate="footer_rights">All Rights Reserved.</span></p>
             </div>
         </div>
     </footer>
@@ -769,37 +503,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 800,
+            duration: 1000,
             once: true
-        });
-        
-        // Language Switcher
-        document.getElementById('langSwitcher').addEventListener('click', function() {
-            const html = document.documentElement;
-            const currentLang = html.getAttribute('lang');
-            
-            if (currentLang === 'en') {
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-                this.textContent = 'EN';
-                
-                // Update all elements with data-en and data-ar attributes
-                document.querySelectorAll('[data-en]').forEach(element => {
-                    element.textContent = element.getAttribute('data-ar');
-                });
-            } else {
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-                this.textContent = 'AR';
-                
-                // Update all elements with data-en and data-ar attributes
-                document.querySelectorAll('[data-en]').forEach(element => {
-                    element.textContent = element.getAttribute('data-en');
-                });
-            }
         });
     </script>
 </body>
