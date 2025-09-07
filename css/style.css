@@ -242,6 +242,11 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.hero .btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--light-color);
+    color: var(--light-color);
+}
 .btn-outline {
     background-color: transparent;
     border: 2px solid var(--primary-color);
