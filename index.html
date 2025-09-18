@@ -154,19 +154,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html" data-translate="nav_home">Home</a>
+                        <a class="nav-link active" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" data-translate="nav_about">About</a>
+                        <a class="nav-link" href="about.html" data-en="About" data-ar="من نحن">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html" data-translate="nav_services">Services</a>
+                        <a class="nav-link" href="services.html" data-en="Services" data-ar="خدماتنا">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.html" data-translate="nav_courses">Courses</a>
+                        <a class="nav-link" href="courses.html" data-en="Courses" data-ar="دوراتنا">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" data-translate="nav_contact">Contact</a>
+                        <a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -184,58 +184,22 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div id="heroCarousel" class="carousel slide hero-slider" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="videos/hero-background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 data-en="Excellence in Coffee Consulting & Training" data-ar="التميز في استشارات وتدريب القهوة">Excellence in Coffee Consulting & Training</h1>
+            <p data-en="Empowering coffee businesses with expert knowledge and innovative solutions" data-ar="تمكين أعمال القهوة بالمعرفة الخبيرة والحلول المبتكرة">
+                Empowering coffee businesses with expert knowledge and innovative solutions
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="services.html" class="btn btn-primary me-2" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
+                <a href="contact.html" class="btn btn-outline" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-1.jpg'); background-size: cover; background-position: center;">
-                        <div class="hero-content">
-                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
-                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
-                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
-                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-2.jpg'); background-size: cover; background-position: center;">
-                        <div class="hero-content">
-                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
-                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
-                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
-                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <div class="hero-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-slide-3.jpg'); background-size: cover; background-position: center;">
-                        <div class="hero-content">
-                            <h1 data-translate="hero_title" data-aos="fade-up">Excellence in Coffee Consulting & Training</h1>
-                            <p data-translate="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering coffee businesses with expert knowledge and innovative solutions</p>
-                            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                                <a href="services.html" class="btn btn-primary me-2" data-translate="hero_btn1">Our Services</a>
-                                <a href="contact.html" class="btn btn-outline" data-translate="hero_btn2">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </section>
 
@@ -251,10 +215,14 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="about-content">
                         <div class="section-title text-start">
-                            <h2 data-translate="about_title">About Coffeemetry</h2>
+                            <h2 data-en="About Coffeemetry" data-ar="نبذة عن كوفي متري">About Coffeemetry</h2>
                         </div>
-                        <p data-translate="about_text1">Coffeemetry is a newly established startup company founded in 2025 and headquartered in Amman, Jordan. The company specializes in providing consulting services, professional barista training, and tailored solutions to help coffeehouses achieve sustainable growth and operational excellence.</p>
-                        <p data-translate="about_text2">We aim to bridge the gap between passion for coffee and successful business practices, empowering coffee entrepreneurs and professionals with the knowledge and skills to thrive in a competitive market.</p>
+                        <p data-en="Coffeemetry is a newly established startup company founded in 2025 and headquartered in Amman, Jordan. The company specializes in providing consulting services, professional barista training, and tailored solutions to help coffeehouses achieve sustainable growth and operational excellence." data-ar="كوفي متري هي شركة ناشئة تم تأسيسها حديثًا في عام 2025 ومقرها في عمان، الأردن. تتخصص الشركة في تقديم خدمات الاستشارات، وتدريب الباريستا الاحترافي، والحلول المصممة لمساعدة المقاهي على تحقيق نمو مستدام وتميز تشغيلي.">
+                        Coffeemetry is a newly established startup company founded in 2025 and headquartered in Amman, Jordan. The company specializes in providing consulting services, professional barista training, and tailored solutions to help coffeehouses achieve sustainable growth and operational excellence.
+                        </p>
+                        <p data-en="We aim to bridge the gap between passion for coffee and successful business practices, empowering coffee entrepreneurs and professionals with the knowledge and skills to thrive in a competitive market." data-ar="نهدف إلى سد الفجوة بين الشغف بالقهوة وممارسات الأعمال الناجحة، وتمكين رواد الأعمال والمهنيين في مجال القهوة بالمعرفة والمهارات اللازمة للتفوق في سوق تنافسية.">
+                        We aim to bridge the gap between passion for coffee and successful business practices, empowering coffee entrepreneurs and professionals with the knowledge and skills to thrive in a competitive market.
+                        </p>
                         
                         <!-- <div class="vision-mission mt-4">
                             <div class="vm-item mb-4">
@@ -272,42 +240,42 @@
             
             <div class="values mt-5">
                 <div class="section-title">
-                    <h2 data-translate="values_title">Our Core Values</h2>
+                    <h2 data-en="Our Core Values" data-ar="قيمنا الأساسية">Our Core Values</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="value-item">
                             <i class="fas fa-trophy"></i>
-                            <h4 data-translate="value_excellence">Excellence</h4>
-                            <p data-translate="value_excellence_text">Delivering the highest quality consulting and training standards.</p>
+                            <h4 data-en="Excellence" data-ar="التميز">Excellence</h4>
+                            <p data-en="Delivering the highest quality consulting and training standards." data-ar="تقديم أعلى معايير الاستشارات والتدريب جودة.">Delivering the highest quality consulting and training standards.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="value-item">
                             <i class="fas fa-heart"></i>
-                            <h4 data-translate="value_passion">Passion</h4>
-                            <p data-translate="value_passion_text">Sharing a genuine love for coffee and coffeehouse culture.</p>
+                            <h4 data-en="Passion" data-ar="الشغف">Passion</h4>
+                            <p data-en="Sharing a genuine love for coffee and coffeehouse culture." data-ar="مشاركة حب حقيقي للقهوة وثقافة المقاهي.">Sharing a genuine love for coffee and coffeehouse culture.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="value-item">
                             <i class="fas fa-handshake"></i>
-                            <h4 data-translate="value_integrity">Integrity</h4>
-                            <p data-translate="value_integrity_text">Building trust through transparency and honest practices.</p>
+                            <h4 data-en="Integrity" data-ar="النزاهة">Integrity</h4>
+                            <p data-en="Building trust through transparency and honest practices." data-ar="بناء الثقة من خلال الشفافية والممارسات الصادقة.">Building trust through transparency and honest practices.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="value-item">
                             <i class="fas fa-lightbulb"></i>
-                            <h4 data-translate="value_innovation">Innovation</h4>
-                            <p data-translate="value_innovation_text">Introducing creative solutions and strategies for growth.</p>
+                            <h4 data-en="Innovation" data-ar="الابتكار">Innovation</h4>
+                            <p data-en="Introducing creative solutions and strategies for growth." data-ar="تقديم حلول واستراتيجيات مبتكرة للنمو.">Introducing creative solutions and strategies for growth.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="value-item">
                             <i class="fas fa-leaf"></i>
-                            <h4 data-translate="value_sustainability">Sustainability</h4>
-                            <p data-translate="value_sustainability_text">Encouraging environmentally and socially responsible practices.</p>
+                            <h4 data-en="Sustainability" data-ar="الاستدامة">Sustainability</h4>
+                            <p data-en="Encouraging environmentally and socially responsible practices." data-ar="تشجيع الممارسات المسؤولة بيئيًا واجتماعيًا.">Encouraging environmentally and socially responsible practices.</p>
                         </div>
                     </div>
                 </div>
@@ -319,7 +287,7 @@
     <section class="services section-padding">
         <div class="container">
             <div class="section-title">
-                <h2 data-translate="services_title">Our Services</h2>
+                <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -328,9 +296,9 @@
                             <img src="images/service-1.jpg" alt="Coffee Consulting" class="img-fluid">
                         </div>
                         <div class="service-content">
-                            <h3 data-translate="service_consulting">Consulting for Coffeehouses</h3>
-                            <p data-translate="service_consulting_text">Business growth strategies, operational efficiency, and customer experience enhancement.</p>
-                            <a href="services-details.html#consulting" class="btn btn-sm btn-outline">Learn More</a>
+                            <h3 data-en="Consulting for Coffeehouses" data-ar="استشارات للمقاهي">Consulting for Coffeehouses</h3>
+                            <p data-en="Business growth strategies, operational efficiency, and customer experience enhancement." data-ar="استراتيجيات نمو الأعمال، وكفاءة العمليات، وتعزيز تجربة العملاء.">Business growth strategies, operational efficiency, and customer experience enhancement.</p>
+                            <a href="services-details.html#consulting" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -340,9 +308,9 @@
                             <img src="images/service-2.jpg" alt="Barista Training" class="img-fluid">
                         </div>
                         <div class="service-content">
-                            <h3 data-translate="service_training">Barista Training Programs</h3>
-                            <p data-translate="service_training_text">Hands-on workshops and professional training tailored to all skill levels.</p>
-                            <a href="services-details.html#training" class="btn btn-sm btn-outline">Learn More</a>
+                            <h3 data-en="Barista Training Programs" data-ar="برامج تدريب الباريستا">Barista Training Programs</h3>
+                            <p data-en="Hands-on workshops and professional training tailored to all skill levels." data-ar="ورش عمل عملية وتدريب مهني مصمم ليناسب جميع مستويات المهارة.">Hands-on workshops and professional training tailored to all skill levels.</p>
+                            <a href="services-details.html#training" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -352,9 +320,9 @@
                             <img src="images/service-3.jpg" alt="Menu Development" class="img-fluid">
                         </div>
                         <div class="service-content">
-                            <h3 data-translate="service_menu">Menu Development & Innovation</h3>
-                            <p data-translate="service_menu_text">Crafting unique coffee experiences through creative beverage design.</p>
-                            <a href="services-details.html#menu" class="btn btn-sm btn-outline">Learn More</a>
+                            <h3 data-en="Menu Development & Innovation" data-ar="تطوير القائمة والابتكار">Menu Development & Innovation</h3>
+                            <p data-en="Crafting unique coffee experiences through creative beverage design." data-ar="ابتكار تجارب قهوة فريدة من خلال تصميم مشروبات مبتكرة.">Crafting unique coffee experiences through creative beverage design.</p>
+                            <a href="services-details.html#menu" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -364,9 +332,9 @@
                             <img src="images/service-4.jpg" alt="Quality Control" class="img-fluid">
                         </div>
                         <div class="service-content">
-                            <h3 data-translate="service_quality">Quality Control & Standards</h3>
-                            <p data-translate="service_quality_text">Implementing systems to ensure consistency and excellence.</p>
-                            <a href="services-details.html#quality" class="btn btn-sm btn-outline">Learn More</a>
+                            <h3 data-en="Quality Control & Standards" data-ar="مراقبة الجودة والمعايير">Quality Control & Standards</h3>
+                            <p data-en="Implementing systems to ensure consistency and excellence." data-ar="تنفيذ أنظمة لضمان الاتساق والتميز.">Implementing systems to ensure consistency and excellence.</p>
+                            <a href="services-details.html#quality" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -376,15 +344,15 @@
                             <img src="images/service-5.jpg" alt="Market Research" class="img-fluid">
                         </div>
                         <div class="service-content">
-                            <h3 data-translate="service_research">Market Research & Growth Planning</h3>
-                            <p data-translate="service_research_text">Guiding businesses with data-driven insights for expansion.</p>
-                            <a href="services-details.html#research" class="btn btn-sm btn-outline">Learn More</a>
+                            <h3 data-en="Market Research & Growth Planning" data-ar="أبحاث السوق وتخطيط النمو">Market Research & Growth Planning</h3>
+                            <p data-en="Guiding businesses with data-driven insights for expansion." data-ar="توجيه الأعمال برؤى مستندة إلى البيانات من أجل التوسع.">Guiding businesses with data-driven insights for expansion.</p>
+                            <a href="services-details.html#research" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="services.html" class="btn btn-primary" data-translate="view_all_services">View All Services</a>
+                <a href="services.html" class="btn btn-primary" data-en="View All Services" data-ar="عرض جميع الخدمات">View All Services</a>
             </div>
         </div>
     </section>
@@ -393,7 +361,7 @@
     <section class="courses section-padding">
         <div class="container">
             <div class="section-title">
-                <h2 data-translate="courses_title">Our Courses</h2>
+                <h2 data-en="Our Courses" data-ar="دوراتنا">Our Courses</h2>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -403,13 +371,13 @@
                             <div class="course-badge">Beginner</div>
                         </div>
                         <div class="course-content">
-                            <h3>Barista Fundamentals</h3>
+                            <h3 data-en="Barista Fundamentals" data-ar="أساسيات الباريستا">Barista Fundamentals</h3>
                             <div class="course-meta">
                                 <span><i class="far fa-clock"></i> 20 Hours</span>
                                 <span><i class="far fa-calendar"></i> 5 Days</span>
                             </div>
-                            <p>Master the basics of espresso preparation, milk steaming, and latte art.</p>
-                            <a href="courses.html#barista-fundamentals" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                            <p data-en="Master the basics of espresso preparation, milk steaming, and latte art." data-ar="اتقن أساسيات تحضير الإسبريسو، وتبخير الحليب، وفن اللاتيه.">Master the basics of espresso preparation, milk steaming, and latte art.</p>
+                            <a href="courses.html#barista-fundamentals" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -420,13 +388,13 @@
                             <div class="course-badge">Advanced</div>
                         </div>
                         <div class="course-content">
-                            <h3>Advanced Brewing Techniques</h3>
+                            <h3 data-en="Advanced Brewing Techniques" data-ar="تقنيات التحضير المتقدمة">Advanced Brewing Techniques</h3>
                             <div class="course-meta">
                                 <span><i class="far fa-clock"></i> 30 Hours</span>
                                 <span><i class="far fa-calendar"></i> 10 Days</span>
                             </div>
-                            <p>Explore advanced extraction methods and flavor profiling for specialty coffee.</p>
-                            <a href="courses.html#advanced-brewing" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                            <p data-en="Explore advanced extraction methods and flavor profiling for specialty coffee." data-ar="استكشف طرق الاستخراج المتقدمة وتحليل النكهات للقهوة المختصة.">Explore advanced extraction methods and flavor profiling for specialty coffee.</p>
+                            <a href="courses.html#advanced-brewing" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -437,19 +405,19 @@
                             <div class="course-badge">Professional</div>
                         </div>
                         <div class="course-content">
-                            <h3>Coffee Business Management</h3>
+                            <h3 data-en="Coffee Business Management" data-ar="إدارة أعمال القهوة">Coffee Business Management</h3>
                             <div class="course-meta">
                                 <span><i class="far fa-clock"></i> 40 Hours</span>
                                 <span><i class="far fa-calendar"></i> 2 Weeks</span>
                             </div>
-                            <p>Learn to manage and grow a successful coffee business with proven strategies.</p>
-                            <a href="courses.html#business-management" class="btn btn-sm btn-outline" data-translate="course_btn">Learn More</a>
+                            <p data-en="Learn to manage and grow a successful coffee business with proven strategies." data-ar="تعلم كيفية إدارة وتنمية عمل قهوة ناجح باستراتيجيات مثبتة.">Learn to manage and grow a successful coffee business with proven strategies.</p>
+                            <a href="courses.html#business-management" class="btn btn-sm btn-outline" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="courses.html" class="btn btn-primary" data-translate="view_all_courses">View All Courses</a>
+                <a href="courses.html" class="btn btn-primary" data-en="View All Courses" data-ar="عرض جميع الدورات">View All Courses</a>
             </div>
         </div>
     </section>
@@ -458,44 +426,44 @@
     <section class="contact section-padding">
         <div class="container">
             <div class="section-title">
-                <h2 data-translate="contact_title">Contact Us</h2>
+                <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
             </div>
             <div class="row">
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="contact-info">
-                        <h3 data-translate="contact_form_title">Get in Touch</h3>
+                        <h3 data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h3>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h4>Location</h4>
-                                <p data-translate="contact_location">Amman, Jordan</p>
+                                <h4 data-en="Location" data-ar="الموقع">Location</h4>
+                                <p data-en="Amman, Jordan" data-ar="عمان، الأردن">Amman, Jordan</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <h4>Email</h4>
+                                <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
                                 <p><a href="mailto:info@coffeemetry.net">info@coffeemetry.net</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
-                                <h4>Phone</h4>
+                                <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
                                 <p><a href="tel:+962786674465">+962 7 8667 4465</a></p>
                             </div>
                         </div>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61578316979011"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/coffeemetry/"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="contact-form">
-                        <h3 data-translate="contact_form_title">Send Us a Message</h3>
+                        <h3 data-en="Send Us a Message" data-ar="أرسل لنا رسالة">Send Us a Message</h3>
                         <!-- Tally Form Embed -->
                         <iframe 
                             data-tally-src="https://tally.so/embed/3Xj5Zg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
@@ -524,23 +492,23 @@
                 <div class="col-md-4">
                     <div class="footer-logo">
                         <img src="images/logo.png" alt="Coffeemetry Logo" class="img-fluid mb-3">
-                        <p data-translate="footer_about">Coffeemetry is a leading coffee consulting and training hub in the Middle East, shaping the future of coffee culture and business growth.</p>
+                        <p data-ar="كوفيمتري هي مركز رائد للاستشارات والتدريب في مجال القهوة في الشرق الأوسط، تشكل مستقبل ثقافة القهوة ونمو الأعمال." data-en="Coffeemetry is a leading coffee consulting and training hub in the Middle East, shaping the future of coffee culture and business growth.">Coffeemetry is a leading coffee consulting and training hub in the Middle East, shaping the future of coffee culture and business growth.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <h5 data-translate="footer_links">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html" data-translate="nav_home">Home</a></li>
-                        <li><a href="about.html" data-translate="nav_about">About</a></li>
-                        <li><a href="services.html" data-translate="nav_services">Services</a></li>
-                        <li><a href="courses.html" data-translate="nav_courses">Courses</a></li>
-                        <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+                 <div class="col-md-4">
+                    <h5 data-ar="روابط سريعة" data-en="Quick Links">Quick Links</h5>
+                   <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-ar="من نحن">About</a></li>
+                        <li><a href="services.html" data-en="Services" data-ar="خدماتنا">Services</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ar="دوراتنا">Courses</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5 data-translate="footer_contact">Contact Us</h5>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="contact_location">Amman, Jordan</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-en="Amman, Jordan" data-ar="عمان، الأردن">Amman, Jordan</span></li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:info@coffeemetry.net">info@coffeemetry.net</a></li>
                         <li><i class="fas fa-phone"></i> <a href="tel:+962786674465">+962 7 8667 4465</a></li>
                     </ul>
