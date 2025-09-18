@@ -65,16 +65,26 @@ function changeLanguage(lang) {
             document.documentElement.setAttribute('lang', 'en');
         }
     });
-}
+    // Update the language toggle button text
+    const currentLangElement = document.getElementById('current-lang');
+    if (currentLangElement) {
+        currentLangElement.textContent = lang === 'ar' ? 'AR' : 'EN';
+    }
 
-// Example: Call this function when a language switch button is clicked
-document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
-document.getElementById('lang-ar').addEventListener('click', () => changeLanguage('ar'));
+    // Store the selected language in localStorage
+    localStorage.setItem('language', lang);
+}
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', function() {
     changeLanguage(currentLanguage);
 });
+
+// Update language switch buttons
+document.getElementById('languageDropdown').innerHTML = `
+    <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
+    <a class="dropdown-item" href="#" onclick="changeLanguage('ar')">العربية</a>
+`;
 
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
