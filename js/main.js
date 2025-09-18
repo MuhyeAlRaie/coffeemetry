@@ -191,4 +191,30 @@ window.addEventListener('resize', function() {
         newCursorFollower.className = 'cursor-follower';
         document.body.appendChild(newCursorFollower);
     }
+
+    // Initialize AOS with responsive handling
+    if (window.innerWidth > 768) {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    } else {
+        AOS.init({
+            disable: true // Disable AOS for smaller screens
+        });
+    }
+});
+
+// Initialize AOS with responsive handling
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth > 768) {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    } else {
+        AOS.init({
+            disable: true // Disable AOS for smaller screens
+        });
+    }
 });
