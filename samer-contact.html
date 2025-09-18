@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامر صبيح - روابط مهنية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6F4E37;
+            --secondary-color: #A67C52;
+            --accent-color: #D2B48C;
+            --light-color: #F5F5F5;
+            --dark-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8d5c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            transition: font-family 0.3s ease;
+        }
+        
+        body.english {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+        }
+        
+        .language-switcher button {
+            background: none;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .language-switcher button:hover {
+            background-color: var(--light-color);
+        }
+        
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px auto 15px;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .person-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+        
+        .company-name {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .welcome-message {
+            font-size: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background-color: var(--light-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+        }
+        
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--accent-color);
+        }
+        
+        .link-button i {
+            font-size: 18px;
+            width: 22px;
+            text-align: center;
+        }
+        
+        .website {
+            color: var(--primary-color);
+        }
+        
+        .profile {
+            color: var(--primary-color);
+        }
+        
+        .vcard {
+            color: var(--primary-color);
+        }
+        
+        .whatsapp {
+            color: #25D366;
+        }
+        
+        .email {
+            color: var(--secondary-color);
+        }
+        
+        .instagram {
+            color: #E4405F;
+        }
+        
+        .linkedin {
+            color: #0077B5;
+        }
+        
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+        
+        .contact-item i {
+            width: 18px;
+            color: var(--primary-color);
+        }
+        
+        /* LTR adjustments */
+        [dir="ltr"] .language-switcher {
+            left: auto;
+            right: 15px;
+        }
+        
+        [dir="ltr"] .link-button {
+            flex-direction: row;
+        }
+        
+        [dir="ltr"] .contact-item {
+            flex-direction: row;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+            }
+            
+            .person-name {
+                font-size: 22px;
+            }
+            
+            .welcome-message {
+                font-size: 14px;
+            }
+            
+            .language-switcher button {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+            
+            .company-logo {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .person-name {
+                font-size: 20px;
+            }
+            
+            .company-name {
+                font-size: 15px;
+            }
+            
+            .welcome-message {
+                font-size: 13px;
+            }
+            
+            .link-button {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            
+            .link-button i {
+                font-size: 16px;
+                width: 20px;
+            }
+            
+            .contact-item {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button id="langToggle">
+                <i class="fas fa-globe"></i>
+                <span>English</span>
+            </button>
+        </div>
+        
+        <img src="images/contact-logo.jpg" alt="COFFEEMETRY" class="company-logo" id="companyLogo">
+        
+        <h1 class="person-name" id="personName">سامر صبيح</h1>
+        <h2 class="company-name" id="companyName">COFFEEMETRY</h2>
+        
+        <p class="welcome-message" id="welcomeMessage">
+            مرحبًا بكم في مركزي المهني! استكشفوا رحلتنا في عالم القهوة، وقم بتنزيل ملفي الشخصي، أو تواصلوا معي.
+        </p>
+        
+        <div class="buttons-container">
+            <a href="https://www.coffeemetry.net/" target="_blank" class="link-button website" id="websiteButton">
+                <i class="fas fa-globe"></i>
+                <span id="websiteButtonText">موقع الشركة</span>
+            </a>
+            
+            <!-- <a href="#" class="link-button profile" id="profileButton">
+                <i class="fas fa-file-pdf"></i>
+                <span id="profileButtonText">الملف الشخصي كـ PDF</span>
+            </a> -->
+            
+            <a href="#" class="link-button vcard" id="vcardButton">
+                <i class="fas fa-address-card"></i>
+                <span id="vcardButtonText">حفظ جهة الاتصال (vCard)</span>
+            </a>
+            
+            <a href="https://wa.me/962786674465" target="_blank" class="link-button whatsapp" id="whatsappButton">
+                <i class="fab fa-whatsapp"></i>
+                <span id="whatsappButtonText">واتساب</span>
+            </a>
+            
+            <a href="mailto:samer.sbaih@coffeemetry.net" class="link-button email" id="emailButton">
+                <i class="fas fa-envelope"></i>
+                <span id="emailButtonText">بريد إلكتروني</span>
+            </a>
+            
+            <a href="https://www.instagram.com/coffeemetry/" target="_blank" class="link-button instagram" id="instagramButton">
+                <i class="fab fa-instagram"></i>
+                <span id="instagramButtonText">انستغرام</span>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/samer-sbaih-a8372135a/" target="_blank" class="link-button linkedin" id="linkedinButton">
+                <i class="fab fa-linkedin"></i>
+                <span id="linkedinButtonText">لينكدإن</span>
+            </a>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span id="contactEmail">samer.sbaih@coffeemetry.net</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span id="contactPhone">+962 7 8667 4465</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p id="footerText">© 2025 COFFEEMETRY. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+
+    <script>
+        // vCard data
+        const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Sbaih;Samer;;;
+FN:Samer Sbaih
+ORG:COFFEEMETRY
+EMAIL;TYPE=INTERNET:samer.sbaih@coffeemetry.net
+TEL;TYPE=CELL:+962786674465
+URL:https://www.coffeemetry.net/
+URL:https://www.instagram.com/coffeemetry/
+URL:https://www.linkedin.com/in/samer-sbaih-a8372135a/
+END:VCARD`;
+
+        // Translations
+        const translations = {
+            ar: {
+                personName: "سامر صبيح",
+                companyName: "COFFEEMETRY",
+                welcomeMessage: "مرحبًا بكم في مركزي المهني! استكشفوا رحلتنا في عالم القهوة، وقم بتنزيل ملفي الشخصي، أو تواصلوا معي.",
+                websiteButtonText: "موقع الشركة",
+                profileButtonText: "الملف الشخصي كـ PDF",
+                vcardButtonText: "حفظ جهة الاتصال (vCard)",
+                whatsappButtonText: "واتساب",
+                emailButtonText: "بريد إلكتروني",
+                instagramButtonText: "انستغرام",
+                linkedinButtonText: "لينكدإن",
+                footerText: "© 2025 COFFEEMETRY. جميع الحقوق محفوظة.",
+                contactEmail: "samer.sbaih@coffeemetry.net",
+                contactPhone: "+962 7 8667 4465",
+                langToggle: "English",
+                logoAlt: "COFFEEMETRY"
+            },
+            en: {
+                personName: "Samer Sbaih",
+                companyName: "COFFEEMETRY",
+                welcomeMessage: "Welcome to my professional hub! Explore our coffee journey, download my profile, or connect with me.",
+                websiteButtonText: "Company Website",
+                profileButtonText: "Profile as PDF",
+                vcardButtonText: "Save Contact (vCard)",
+                whatsappButtonText: "WhatsApp",
+                emailButtonText: "Email",
+                instagramButtonText: "Instagram",
+                linkedinButtonText: "LinkedIn",
+                footerText: "© 2025 COFFEEMETRY. All rights reserved.",
+                contactEmail: "samer.sbaih@coffeemetry.net",
+                contactPhone: "+962 7 8667 4465",
+                langToggle: "العربية",
+                logoAlt: "COFFEEMETRY"
+            }
+        };
+
+        // Configuration
+        const config = {
+            companyLogo: "images/contact-logo.jpg", // Replace with your company logo URL
+            companyWebsite: "https://www.coffeemetry.net/",
+            profilePdfUrl: "#", // Replace with your Google Drive PDF link
+            whatsappUrl: "https://wa.me/962786674465",
+            emailUrl: "mailto:samer.sbaih@coffeemetry.net",
+            instagramUrl: "https://www.instagram.com/coffeemetry/",
+            linkedinUrl: "https://www.linkedin.com/in/samer-sbaih-a8372135a/"
+        };
+
+        // Language functions
+        function setLanguage(lang) {
+            const isEnglish = lang === 'en';
+            document.documentElement.setAttribute('dir', isEnglish ? 'ltr' : 'rtl');
+            document.documentElement.setAttribute('lang', lang);
+            document.body.classList.toggle('english', isEnglish);
+            
+            // Update all text content
+            document.getElementById('personName').textContent = translations[lang].personName;
+            document.getElementById('companyName').textContent = translations[lang].companyName;
+            document.getElementById('welcomeMessage').textContent = translations[lang].welcomeMessage;
+            document.getElementById('websiteButtonText').textContent = translations[lang].websiteButtonText;
+            // document.getElementById('profileButtonText').textContent = translations[lang].profileButtonText;
+            document.getElementById('vcardButtonText').textContent = translations[lang].vcardButtonText;
+            document.getElementById('whatsappButtonText').textContent = translations[lang].whatsappButtonText;
+            document.getElementById('emailButtonText').textContent = translations[lang].emailButtonText;
+            document.getElementById('instagramButtonText').textContent = translations[lang].instagramButtonText;
+            document.getElementById('linkedinButtonText').textContent = translations[lang].linkedinButtonText;
+            document.getElementById('footerText').textContent = translations[lang].footerText;
+            document.getElementById('contactEmail').textContent = translations[lang].contactEmail;
+            document.getElementById('contactPhone').textContent = translations[lang].contactPhone;
+            document.getElementById('langToggle').querySelector('span').textContent = translations[lang].langToggle;
+            document.getElementById('companyLogo').alt = translations[lang].logoAlt;
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function toggleLanguage() {
+            const currentLang = document.documentElement.getAttribute('lang');
+            const newLang = currentLang === 'ar' ? 'en' : 'ar';
+            setLanguage(newLang);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language to Arabic by default
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'ar';
+            setLanguage(savedLanguage);
+            
+            // Set the content
+            document.getElementById('companyLogo').src = config.companyLogo;
+            document.getElementById('websiteButton').href = config.companyWebsite;
+            // document.getElementById('profileButton').href = config.profilePdfUrl;
+            document.getElementById('whatsappButton').href = config.whatsappUrl;
+            document.getElementById('emailButton').href = config.emailUrl;
+            document.getElementById('instagramButton').href = config.instagramUrl;
+            document.getElementById('linkedinButton').href = config.linkedinUrl;
+            
+            // Language toggle event
+            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+            
+            // vCard download functionality - works on all devices
+            document.getElementById('vcardButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create vCard file
+                const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                
+                // Create download link
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Samer_Sbaih.vcf';
+                
+                // For mobile devices, sometimes we need to trigger differently
+                if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+                    // For iOS devices
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        if (reader.result) {
+                            window.location.href = reader.result;
+                        }
+                    };
+                    reader.readAsDataURL(blob);
+                } else {
+                    // For other devices
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+                
+                // Clean up
+                setTimeout(() => {
+                    URL.revokeObjectURL(url);
+                }, 100);
+                
+                console.log('vCard downloaded');
+            });
+            
+            // Add event listeners for tracking clicks (optional)
+            document.getElementById('websiteButton').addEventListener('click', function() {
+                console.log('Website button clicked');
+            });
+
+            document.getElementById('profileButton').addEventListener('click', function() {
+                console.log('Profile PDF button clicked');
+            });
+
+            document.getElementById('whatsappButton').addEventListener('click', function() {
+                console.log('WhatsApp button clicked');
+            });
+
+            document.getElementById('emailButton').addEventListener('click', function() {
+                console.log('Email button clicked');
+            });
+
+            document.getElementById('instagramButton').addEventListener('click', function() {
+                console.log('Instagram button clicked');
+            });
+
+            document.getElementById('linkedinButton').addEventListener('click', function() {
+                console.log('LinkedIn button clicked');
+            });
+        });
+    </script>
+</body>
+</html>
