@@ -619,45 +619,6 @@ p {
     margin-bottom: 20px;
 }
 
-.service-detail {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-
-.service-detail .col-lg-6 {
-    flex: 1;
-    min-width: 300px;
-}
-
-.service-detail img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-detail h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-.service-detail h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.service-detail ul {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-.service-detail ul li {
-    margin-bottom: 10px;
-}
-
 /* Service Process */
 .service-process .process-item {
     background-color: white;
@@ -1091,22 +1052,9 @@ p {
     margin-bottom: 50px;
 }
 
-.service-detail {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-
-.service-detail .col-lg-6 {
-    flex: 1;
-    min-width: 300px;
-}
-
-.service-detail img {
-    width: 100%;
-    height: auto;
+.service-detail-img {
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -1166,6 +1114,7 @@ p {
 .service-list-widget .service-list li a:hover {
     background-color: var(--light-color);
     color: var(--primary-color);
+    padding-left: 20px;
 }
 
 /* CTA Section */
